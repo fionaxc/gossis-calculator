@@ -1,1 +1,0 @@
-# gossis-calculator
