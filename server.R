@@ -26,10 +26,12 @@ server = function(input, output) {
 
   
   output$gossis_score <- renderText({
+    validate(
+      need(is.numeric(input$age), 'Age must be of type numeric')
+    )
     data = as.data.frame(reactiveValuesToList(input))
     #write.csv(data, "~/Dropbox (MIT)/HST_UROP/data/output_data.csv")
     gossis_score = calculateGossisScore(data)
-    paste("GOSSIS Score: ", gossis_score)
   })
 
 
@@ -45,7 +47,6 @@ calculateGossisScore = function(data){
   merged_data = merged_data %>% mutate(across(starts_with("d1_"), as.numeric))
   merged_data = merged_data %>% mutate(across(ends_with("_apache"), as.numeric))
   merged_data = merged_data %>% mutate(across(c(elective_surgery, aids, cirrhosis, diabetes_mellitus, lymphoma, solid_tumor_with_metastasis, hepatic_failure), as.numeric))
-  write.csv(merged_data, "~/Dropbox (MIT)/HST_UROP/data/merged_data.csv")
   merged_data = preprocess_data(merged_data)
   merged_data = impute_data(merged_data, algo=3)
   merged_data = prepare_fit(merged_data)

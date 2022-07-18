@@ -23,20 +23,16 @@ ui <- fluidPage(
     )),
     
     column(4,
-           tags$p("Input type:"),
-           verbatimTextOutput("input_type_text"),
-           tags$p("Dynamic input value:"),
-           verbatimTextOutput("dynamic_value")
-           # tags$p("Predicted GOSSIS Score"),
-           # verbatimTextOutput("gossis_score")
+           h3("Gossis Score: "),
+           verbatimTextOutput("gossis_score")
+           
+           # tags$p("Input type:"),
+           # verbatimTextOutput("input_type_text"),
+           # tags$p("Dynamic input value:"),
+           # verbatimTextOutput("dynamic_value")
+           
     )
-  ),
-  
-    # Main panel for displaying outputs ----
-    mainPanel(
-      h3("Gossis Score: "),
-      textOutput("gossis_score")
-    )
+  )
 )
 
 

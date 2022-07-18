@@ -6,7 +6,7 @@ generateInputUI = function(bodysystem){
         
         numericInput("age",
              h5("Age"),
-             value = 0),
+             value = 65),
         
         
         selectInput("apache_3j_diagnosis",
@@ -500,7 +500,7 @@ OtherInputs = function(){
 #Returns a list of Apache descriptions for inputted bodysystem corresponding to apache code
 #Possible Inputs: ["Cardiovascular", "Gastrointestinal", "Hematological", "Metabolic", "Neurological", "Renal/Genitourinary", "Respiratory", "Trauma", "Muscoskeletal/Skin disease", "Undefined"]
 getApacheDx = function(bodysystem){
-  apache_diagnosis_map = read.csv("../../data/apache_diagnosis_map.csv")
+  apache_diagnosis_map = read.csv("~/Dropbox (MIT)/HST_UROP/data/apache_diagnosis_map.csv")
   if(! bodysystem %in% names(table(apache_diagnosis_map$group))){
     warning("Bodysystem Invalid")
   }
