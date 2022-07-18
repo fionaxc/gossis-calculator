@@ -1,0 +1,11 @@
+name: gossis-calculator
+title:
+username:
+account: fcai
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6659638
+bundleId: 6109510
+url: https://fcai.shinyapps.io/gossis-calculator/
+when: 1658177257.93265
+lastSyncTime: 1658177257.93267
